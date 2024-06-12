@@ -1,0 +1,472 @@
+{
+    "CustomFont": {
+        "style": "normal",
+        "weight": "400",
+        "glyphs": [
+            {
+                "glyph_name": "2",
+                "codepoint": "e001"
+            },
+            {
+                "glyph_name": "bb",
+                "codepoint": "e002"
+            },
+            {
+                "glyph_name": "a",
+                "codepoint": "e003"
+            },
+            {
+                "glyph_name": "5",
+                "codepoint": "e004"
+            },
+            {
+                "glyph_name": "6",
+                "codepoint": "e005"
+            },
+            {
+                "glyph_name": "asd",
+                "codepoint": "e006"
+            },
+            {
+                "glyph_name": "8",
+                "codepoint": "e007"
+            },
+            {
+                "glyph_name": "9",
+                "codepoint": "e008"
+            },
+            {
+                "glyph_name": "10",
+                "codepoint": "e009"
+            },
+            {
+                "glyph_name": "11asd",
+                "codepoint": "e00a"
+            },
+            {
+                "glyph_name": "12",
+                "codepoint": "e00b"
+            },
+            {
+                "glyph_name": "13",
+                "codepoint": "e00c"
+            },
+            {
+                "glyph_name": "14",
+                "codepoint": "e00d"
+            },
+            {
+                "glyph_name": "15",
+                "codepoint": "e00e"
+            },
+            {
+                "glyph_name": "16",
+                "codepoint": "e00f"
+            },
+            {
+                "glyph_name": "17",
+                "codepoint": "e010"
+            },
+            {
+                "glyph_name": "18",
+                "codepoint": "e011"
+            },
+            {
+                "glyph_name": "asdasd",
+                "codepoint": "e012"
+            },
+            {
+                "glyph_name": "20",
+                "codepoint": "e013"
+            },
+            {
+                "glyph_name": "21",
+                "codepoint": "e014"
+            },
+            {
+                "glyph_name": "22",
+                "codepoint": "e015"
+            },
+            {
+                "glyph_name": "23",
+                "codepoint": "e016"
+            },
+            {
+                "glyph_name": "24",
+                "codepoint": "e017"
+            },
+            {
+                "glyph_name": "25",
+                "codepoint": "e018"
+            },
+            {
+                "glyph_name": "26",
+                "codepoint": "e019"
+            },
+            {
+                "glyph_name": "27",
+                "codepoint": "e01a"
+            },
+            {
+                "glyph_name": "28",
+                "codepoint": "e01b"
+            },
+            {
+                "glyph_name": "29",
+                "codepoint": "e01c"
+            },
+            {
+                "glyph_name": "30",
+                "codepoint": "e01d"
+            },
+            {
+                "glyph_name": "31",
+                "codepoint": "e01e"
+            },
+            {
+                "glyph_name": "32",
+                "codepoint": "e01f"
+            },
+            {
+                "glyph_name": "33",
+                "codepoint": "e020"
+            },
+            {
+                "glyph_name": "34",
+                "codepoint": "e021"
+            },
+            {
+                "glyph_name": "35",
+                "codepoint": "e022"
+            },
+            {
+                "glyph_name": "36",
+                "codepoint": "e023"
+            },
+            {
+                "glyph_name": "37",
+                "codepoint": "e024"
+            },
+            {
+                "glyph_name": "38",
+                "codepoint": "e025"
+            },
+            {
+                "glyph_name": "39",
+                "codepoint": "e026"
+            },
+            {
+                "glyph_name": "40",
+                "codepoint": "e027"
+            },
+            {
+                "glyph_name": "41",
+                "codepoint": "e028"
+            },
+            {
+                "glyph_name": "42",
+                "codepoint": "e029"
+            },
+            {
+                "glyph_name": "43",
+                "codepoint": "e02a"
+            },
+            {
+                "glyph_name": "44",
+                "codepoint": "e02b"
+            },
+            {
+                "glyph_name": "45",
+                "codepoint": "e02c"
+            },
+            {
+                "glyph_name": "46",
+                "codepoint": "e02d"
+            },
+            {
+                "glyph_name": "47",
+                "codepoint": "e02e"
+            },
+            {
+                "glyph_name": "48",
+                "codepoint": "e02f"
+            },
+            {
+                "glyph_name": "49",
+                "codepoint": "e030"
+            },
+            {
+                "glyph_name": "50",
+                "codepoint": "e031"
+            },
+            {
+                "glyph_name": "51",
+                "codepoint": "e032"
+            },
+            {
+                "glyph_name": "52",
+                "codepoint": "e033"
+            },
+            {
+                "glyph_name": "53",
+                "codepoint": "e034"
+            },
+            {
+                "glyph_name": "54",
+                "codepoint": "e035"
+            },
+            {
+                "glyph_name": "55",
+                "codepoint": "e036"
+            },
+            {
+                "glyph_name": "56",
+                "codepoint": "e037"
+            },
+            {
+                "glyph_name": "57",
+                "codepoint": "e038"
+            },
+            {
+                "glyph_name": "58",
+                "codepoint": "e039"
+            },
+            {
+                "glyph_name": "59",
+                "codepoint": "e03a"
+            },
+            {
+                "glyph_name": "60",
+                "codepoint": "e03b"
+            },
+            {
+                "glyph_name": "61",
+                "codepoint": "e03c"
+            },
+            {
+                "glyph_name": "62",
+                "codepoint": "e03d"
+            },
+            {
+                "glyph_name": "63",
+                "codepoint": "e03e"
+            },
+            {
+                "glyph_name": "64",
+                "codepoint": "e03f"
+            },
+            {
+                "glyph_name": "65",
+                "codepoint": "e040"
+            },
+            {
+                "glyph_name": "66",
+                "codepoint": "e041"
+            },
+            {
+                "glyph_name": "67",
+                "codepoint": "e042"
+            },
+            {
+                "glyph_name": "68",
+                "codepoint": "e043"
+            },
+            {
+                "glyph_name": "69",
+                "codepoint": "e044"
+            },
+            {
+                "glyph_name": "70",
+                "codepoint": "e045"
+            },
+            {
+                "glyph_name": "71",
+                "codepoint": "e046"
+            },
+            {
+                "glyph_name": "72",
+                "codepoint": "e047"
+            },
+            {
+                "glyph_name": "73",
+                "codepoint": "e048"
+            },
+            {
+                "glyph_name": "74",
+                "codepoint": "e049"
+            },
+            {
+                "glyph_name": "75",
+                "codepoint": "e04a"
+            },
+            {
+                "glyph_name": "76",
+                "codepoint": "e04b"
+            },
+            {
+                "glyph_name": "77",
+                "codepoint": "e04c"
+            },
+            {
+                "glyph_name": "78",
+                "codepoint": "e04d"
+            },
+            {
+                "glyph_name": "79",
+                "codepoint": "e04e"
+            },
+            {
+                "glyph_name": "80",
+                "codepoint": "e04f"
+            },
+            {
+                "glyph_name": "81",
+                "codepoint": "e050"
+            },
+            {
+                "glyph_name": "82",
+                "codepoint": "e051"
+            },
+            {
+                "glyph_name": "83",
+                "codepoint": "e052"
+            },
+            {
+                "glyph_name": "84",
+                "codepoint": "e053"
+            },
+            {
+                "glyph_name": "85",
+                "codepoint": "e054"
+            },
+            {
+                "glyph_name": "86",
+                "codepoint": "e055"
+            },
+            {
+                "glyph_name": "87",
+                "codepoint": "e056"
+            },
+            {
+                "glyph_name": "88",
+                "codepoint": "e057"
+            },
+            {
+                "glyph_name": "89",
+                "codepoint": "e058"
+            },
+            {
+                "glyph_name": "90",
+                "codepoint": "e059"
+            },
+            {
+                "glyph_name": "91",
+                "codepoint": "e05a"
+            },
+            {
+                "glyph_name": "92",
+                "codepoint": "e05b"
+            },
+            {
+                "glyph_name": "93",
+                "codepoint": "e05c"
+            },
+            {
+                "glyph_name": "94",
+                "codepoint": "e05d"
+            },
+            {
+                "glyph_name": "95",
+                "codepoint": "e05e"
+            },
+            {
+                "glyph_name": "96",
+                "codepoint": "e05f"
+            },
+            {
+                "glyph_name": "97",
+                "codepoint": "e060"
+            },
+            {
+                "glyph_name": "98",
+                "codepoint": "e061"
+            },
+            {
+                "glyph_name": "99",
+                "codepoint": "e062"
+            },
+            {
+                "glyph_name": "100",
+                "codepoint": "e063"
+            },
+            {
+                "glyph_name": "101",
+                "codepoint": "e064"
+            },
+            {
+                "glyph_name": "102",
+                "codepoint": "e065"
+            },
+            {
+                "glyph_name": "103",
+                "codepoint": "e066"
+            },
+            {
+                "glyph_name": "104",
+                "codepoint": "e067"
+            },
+            {
+                "glyph_name": "105",
+                "codepoint": "e068"
+            },
+            {
+                "glyph_name": "106",
+                "codepoint": "e069"
+            },
+            {
+                "glyph_name": "107",
+                "codepoint": "e06a"
+            },
+            {
+                "glyph_name": "108",
+                "codepoint": "e06b"
+            },
+            {
+                "glyph_name": "109",
+                "codepoint": "e06c"
+            },
+            {
+                "glyph_name": "110",
+                "codepoint": "e06d"
+            },
+            {
+                "glyph_name": "111",
+                "codepoint": "e06e"
+            },
+            {
+                "glyph_name": "112",
+                "codepoint": "e06f"
+            },
+            {
+                "glyph_name": "113",
+                "codepoint": "e070"
+            },
+            {
+                "glyph_name": "114",
+                "codepoint": "e071"
+            },
+            {
+                "glyph_name": "115",
+                "codepoint": "e072"
+            },
+            {
+                "glyph_name": "116",
+                "codepoint": "e073"
+            },
+            {
+                "glyph_name": "117",
+                "codepoint": "e074"
+            }
+        ]
+    }
+}
