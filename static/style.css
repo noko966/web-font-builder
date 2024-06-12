@@ -4,7 +4,7 @@ body {
   color: #fff;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -70,16 +70,15 @@ input[type="text"] {
 }
 
 
-.code_point{
+.code_point {
   font-family: Arial, sans-serif;
-
   cursor: pointer;
-    height: 20px;
-    opacity: 0.5;
-    font-size: 12px;
-    text-transform: uppercase;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    width: 100%;
+  height: 20px;
+  opacity: 0.5;
+  font-size: 12px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }

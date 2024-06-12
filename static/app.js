@@ -19,84 +19,121 @@ document.addEventListener("DOMContentLoaded", () => {
     document.head.appendChild(style);
   }
 
-// Function to load and render the font and its mapping from the server
-async function loadFont() {
-  try {
-    const response = await fetch("/fonts");
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const fontFiles = await response.json();
-    if (fontFiles.length === 0) {
-      console.warn("No fonts found.");
-      return;
-    }
+  // Function to load and render the font and its mapping from the server
+  async function loadFont() {
+    try {
+      const response = await fetch("/fonts");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const fontFiles = await response.json();
+      if (fontFiles.length === 0) {
+        console.warn("No fonts found.");
+        return;
+      }
 
-    // Assuming the first font file as base name without extension
-    const fontName = "CustomFont";
-    const baseUrl = `/static/fonts/${fontFiles[0].split(".")[0]}`;
+      // Assuming the first font file as base name without extension
+      const fontName = "CustomFont";
+      const baseUrl = `/static/fonts/${fontFiles[0].split(".")[0]}`;
 
-    addFontFace(fontName, baseUrl);
+      addFontFace(fontName, baseUrl);
 
-    // Fetch the font mapping
-    const mappingResponse = await fetch(`/get_font_data?name=${fontName}`);
-    if (!mappingResponse.ok) {
-      throw new Error("Network response for mapping was not ok");
-    }
-    const fontData = await mappingResponse.json();
-    const glyphs = fontData.glyphs;
+      // Fetch the font mapping
+      const mappingResponse = await fetch(`/get_font_data?name=${fontName}`);
+      if (!mappingResponse.ok) {
+        throw new Error("Network response for mapping was not ok");
+      }
+      const fontData = await mappingResponse.json();
+      const glyphs = fontData.glyphs;
 
-    // Clear existing glyphs
-    fontContainer.innerHTML = "";
+      // Clear existing glyphs
+      fontContainer.innerHTML = "";
 
-    // Render each glyph according to the mapping
-    glyphs.forEach(glyph => {
+      // Render each glyph according to the mapping
+      glyphs.forEach(glyph => {
+        const codePoint = document.createElement("span");
+        codePoint.className = "code_point";
+        codePoint.innerText = glyph.codepoint;
 
-      const codePoint = document.createElement("span");
-      codePoint.className = "code_point";
-      codePoint.innerText = glyph.codepoint;
+        const glyphElement = document.createElement("div");
+        glyphElement.className = "glyph";
 
-      const glyphElement = document.createElement("div");
-      glyphElement.className = "glyph";
-      
+        const glyphElementIcon = document.createElement("i");
+        glyphElementIcon.className = "glyph_icon";
+        glyphElementIcon.innerText = String.fromCharCode(parseInt(glyph.codepoint, 16));
+        glyphElement.style.fontFamily = fontName;
 
-      const glyphElementIcon = document.createElement("i");
-      glyphElementIcon.className = "glyph_icon";
-      glyphElementIcon.innerText = String.fromCharCode(parseInt(glyph.codepoint, 16));
-      glyphElement.style.fontFamily = fontName;
+        const glyphInputWrapper = document.createElement("div");
+        glyphInputWrapper.className = "glyph_input_wrapper";
 
-      const glyphInputWrapper = document.createElement("div");
-      glyphInputWrapper.className = "glyph_input_wrapper";
+        const glyphInput = document.createElement("input");
+        glyphInput.type = "text";
+        glyphInput.value = glyph.glyph_name;
+        glyphInput.addEventListener("keydown", (event) => {
+          if (event.key === "Enter") {
+            updateGlyphName(fontName, glyph.glyph_name, glyphInput.value);
+          }
+        });
 
-      const glyphInput = document.createElement("input");
-      glyphInput.type = "text";
-      glyphInput.value = glyph.glyph_name;
-      glyphInput.addEventListener("keydown", (event) => {
-        if (event.key === "Enter") {
-          updateGlyphName(fontName, glyph.glyph_name, glyphInput.value);
-        }
+        const editIcon = document.createElement("span");
+        editIcon.className = "edit_icon";
+        editIcon.innerHTML = "&#9998;"; // Unicode for edit icon
+        editIcon.addEventListener("click", () => {
+          glyphInput.focus();
+        });
+
+        const replaceButton = document.createElement("button");
+        replaceButton.innerText = "Replace";
+        replaceButton.addEventListener("click", () => openFileDialog(glyph.codepoint));
+
+        fontContainer.appendChild(glyphElement);
+        glyphInputWrapper.appendChild(glyphInput);
+        glyphInputWrapper.appendChild(editIcon);
+
+        glyphElement.appendChild(codePoint);
+        glyphElement.appendChild(glyphElementIcon);
+        glyphElement.appendChild(replaceButton);
+        glyphElement.appendChild(glyphInputWrapper);
       });
-
-      const editIcon = document.createElement("span");
-      editIcon.className = "edit_icon";
-      editIcon.innerHTML = "&#9998;"; // Unicode for edit icon
-      editIcon.addEventListener("click", () => {
-        glyphInput.focus();
-      });
-      
-      fontContainer.appendChild(glyphElement);
-      glyphInputWrapper.appendChild(glyphInput);
-      glyphInputWrapper.appendChild(editIcon);
-
-      glyphElement.appendChild(codePoint);
-      glyphElement.appendChild(glyphElementIcon);
-      glyphElement.appendChild(glyphInputWrapper);
-    });
-  } catch (error) {
-    console.error("Error loading font:", error);
+    } catch (error) {
+      console.error("Error loading font:", error);
+    }
   }
-}
 
+  // Function to open file dialog
+  function openFileDialog(codepoint) {
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = ".svg";
+    fileInput.addEventListener("change", () => replaceGlyph(codepoint, fileInput.files[0]));
+    fileInput.click();
+  }
+
+  // Function to replace glyph
+  async function replaceGlyph(codepoint, file) {
+    const formData = new FormData();
+    formData.append("codepoint", codepoint);
+    formData.append("file", file);
+
+    try {
+      const response = await fetch('/replace_glyph', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const result = await response.json();
+      console.log(result.message);
+
+      // Reload the font to reflect the changes
+      loadFont();
+    } catch (error) {
+      console.error("Error replacing glyph:", error);
+    }
+  }
 
   // Function to update the glyph name
   async function updateGlyphName(fontName, oldGlyphName, newGlyphName) {
